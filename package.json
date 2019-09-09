@@ -1,0 +1,19 @@
+{
+  "name": "taps",
+  "version": "1.0.0",
+  "description": "A quick and effective todo app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnfoley3/taps.git"
+  },
+  "author": "John Foley <john@foleyloaded.io>",
+  "license": "Beerware",
+  "bugs": {
+    "url": "https://github.com/johnfoley3/taps/issues"
+  },
+  "homepage": "https://github.com/johnfoley3/taps#readme"
+}
