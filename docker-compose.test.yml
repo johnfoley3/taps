@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  api:
+    build:
+      context: .
+      target: dev
+    command: 'npm run compile:watch'
+    environment:
+        DB_URL: postgres://root:123@postgres/user
+    volumes:
+      - ./src:/usr/src/app/src
+      - ./jest.config.js:/usr/src/app/jest.config.js
+  postgres:
+    build: postgres
+    volumes:
+      - ./postgres/data/test:/var/lib/postgres/data
