@@ -5,7 +5,7 @@ services:
     build:
       context: .
       target: prod
-    command: 'node dist/index.local.js'
+    command: 'node dist/index.js'
     environment:
       NODE_ENV: 'docker'
       DB_URL: postgres://root:123@postgres/user
