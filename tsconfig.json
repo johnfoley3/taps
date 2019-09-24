@@ -17,6 +17,6 @@
     "allowSyntheticDefaultImports": true,
     "strictNullChecks": true,
     "resolveJsonModule": true
-   },
+  },
   "exclude": ["node_modules/**/*.ts"]
 }
