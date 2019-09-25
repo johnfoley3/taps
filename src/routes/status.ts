@@ -1,7 +1,15 @@
+import Promise from "bluebird";
+import { Request } from "@hapi/hapi";
 import { ServerRoute } from "@hapi/hapi";
+import { serverMethods } from "../server";
 
-function getStatus(): any {
-  return { statusCode: 200 };
+function getStatus(request: Request): Promise<any> {
+  const methods = serverMethods(request);
+  const connection = methods.connection();
+
+  return Promise.resolve(connection.one("SELECT now();")).then(now => {
+    return { status: "good", dbTime: now };
+  });
 }
 
 const route: ServerRoute = {

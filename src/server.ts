@@ -1,6 +1,7 @@
 import Promise from "bluebird";
 import hapi, { Request, Server } from "@hapi/hapi";
 import { IDatabase } from "pg-promise";
+import Logger from "hapi-pino";
 import routes from "./routes";
 import Config from "./lib/config";
 import methods from "./plugins/methods";
@@ -37,6 +38,12 @@ export default function buildServer(serverOpts: ServerOpts): Promise<Server> {
       options: {
         connection: providedConnection,
         config
+      }
+    },
+    {
+      plugin: Logger,
+      options: {
+        prettyPrint: process.env.NODE_ENV !== "production"
       }
     }
   ];

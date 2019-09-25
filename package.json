@@ -13,6 +13,7 @@
     "lint:fix": "npm run lint -- --fix",
     "postinstall": "chmod u+x ./bin/*",
     "start": "docker-compose up -d --build --remove-orphans",
+    "down": "docker-compose down",
     "test": "npm run test:start && npm run test:run",
     "test:run": "docker-compose -f docker-compose.test.yml -p user-api-test exec api npm run jest",
     "test:start": "docker-compose -f docker-compose.test.yml -p user-api-test up -d --build --remove-orphans"
@@ -31,6 +32,7 @@
     "@hapi/boom": "7.4.2",
     "@hapi/hapi": "^18.4.0",
     "bluebird": "^3.5.5",
+    "hapi-pino": "^6.1.0",
     "http-status-codes": "^1.3.2",
     "lodash": "^4.17.15",
     "pg-promise": "^9.2.1"
@@ -38,6 +40,7 @@
   "devDependencies": {
     "@types/bluebird": "^3.5.27",
     "@types/bluebird-global": "^3.5.12",
+    "@types/hapi-pino": "^6.0.0",
     "@types/hapi__boom": "7.4.0",
     "@types/hapi__hapi": "^18.2.5",
     "@types/jest": "^24.0.18",
