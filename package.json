@@ -4,6 +4,8 @@
   "description": "A quick and effective todo app.",
   "main": "dist/index.js",
   "scripts": {
+    "dev": "docker-compose -f docker-compose.dev.yml up --remove-orphans",
+    "dev:build": "docker-compose -f docker-compose.dev.yml up --remove-orphans --build",
     "build:dev": "docker build .",
     "clean": "./bin/clean.sh",
     "compile": "tsc",

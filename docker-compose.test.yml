@@ -4,7 +4,7 @@ services:
   api:
     build:
       context: .
-      target: dev
+      target: build
     command: 'npm run compile:watch'
     environment:
         DB_URL: postgres://root:123@postgres/user

@@ -1,14 +1,13 @@
-FROM node:lts-slim as dev
+FROM node:lts-slim as build
 
 WORKDIR /usr/src/app
 COPY . .
 
 RUN npm install && npm run compile
-RUN ls
-RUN pwd
-FROM dev as prod
+FROM build as prod
 
-COPY --from=dev /usr/src/app/dist/ /usr/src/app/dist
-COPY --from=dev /usr/src/app/package.json /usr/src/app/package.json
+COPY --from=build /usr/src/app/dist/ /usr/src/app/dist
+COPY --from=build /usr/src/app/package.json /usr/src/app/package.json
 
+RUN npm install pm2 -g
 RUN npm install --production
