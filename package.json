@@ -10,7 +10,7 @@
     "clean": "./bin/clean.sh",
     "compile": "tsc",
     "compile:watch": "tsc --watch",
-    "jest": "jest --coverage",
+    "jest": "jest --detectOpenHandles",
     "lint": "eslint --ext .ts src",
     "lint:fix": "npm run lint -- --fix",
     "postinstall": "chmod u+x ./bin/*",

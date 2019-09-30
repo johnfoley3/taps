@@ -1,5 +1,5 @@
 import BluebirdPromise from "bluebird";
-import { Server } from "@hapi/hapi";
+import { Server, ServerInjectResponse } from "@hapi/hapi";
 import { IDatabase } from "pg-promise";
 import buildServer from "../../server";
 import Config from "../../lib/config";
@@ -28,4 +28,14 @@ export async function start(): Promise<TestContext> {
       return { config, connection, server };
     }
   );
+}
+
+export async function getRoute(
+  server: Server,
+  route: string
+): Promise<ServerInjectResponse> {
+  return server.inject({
+    method: "GET",
+    url: route
+  });
 }

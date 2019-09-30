@@ -1,6 +1,6 @@
 import { Server } from "@hapi/hapi";
 import httpStatus from "http-status-codes";
-import { start } from "../helpers";
+import { start, getRoute } from "../helpers";
 
 describe("/status", () => {
   let server: Server;
@@ -12,10 +12,7 @@ describe("/status", () => {
   });
 
   test("responds OK when the service is healthy", async () => {
-    const { statusCode, result } = await server.inject({
-      method: "GET",
-      url: "/status"
-    });
+    const { statusCode, result } = await getRoute(server, "/status");
 
     expect(statusCode).toEqual(httpStatus.OK);
     expect(result).toEqual({ status: "good" });
