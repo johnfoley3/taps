@@ -7,8 +7,8 @@ function getStatus(request: Request): Promise<any> {
   const methods = serverMethods(request);
   const connection = methods.connection();
 
-  return Promise.resolve(connection.one("SELECT now();")).then(now => {
-    return { status: "good", dbTime: now };
+  return Promise.resolve(connection.one("SELECT 1;")).then(now => {
+    return { status: "good" };
   });
 }
 

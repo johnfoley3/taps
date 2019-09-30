@@ -28,8 +28,7 @@ export default function buildServer(serverOpts: ServerOpts): Promise<Server> {
 
   const server = new hapi.Server({
     host,
-    port,
-    debug: { request: ["*"] }
+    port
   });
 
   const plugins = [
