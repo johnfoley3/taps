@@ -11,6 +11,6 @@ services:
       DB_URL: postgres://root:123@postgres/user
     restart: always
     ports:
-      - '80:80'
+      - '80:3000'
   postgres:
     build: postgres
