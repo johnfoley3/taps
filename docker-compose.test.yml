@@ -7,7 +7,7 @@ services:
       target: build
     command: 'npm run compile:watch'
     environment:
-        DB_URL: postgres://root:123@postgres/user
+        DB_URL: postgres://root:123@postgres/taps
     volumes:
       - ./src:/usr/src/app/src
       - ./jest.config.js:/usr/src/app/jest.config.js

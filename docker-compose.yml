@@ -8,7 +8,7 @@ services:
     command: 'node dist/index.js'
     environment:
       NODE_ENV: 'docker'
-      DB_URL: postgres://root:123@postgres/user
+      DB_URL: postgres://root:123@postgres/taps
     volumes:
       - ./src:/usr/src/app/src
     ports:
