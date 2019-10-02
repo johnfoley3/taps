@@ -13,7 +13,6 @@
     "jest": "jest --detectOpenHandles",
     "lint": "eslint --ext .ts src",
     "lint:fix": "npm run lint -- --fix",
-    "postinstall": "chmod u+x ./bin/*",
     "start": "docker-compose up -d --build --remove-orphans",
     "down": "docker-compose down",
     "test": "npm run test:start && npm run test:run",
