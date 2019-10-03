@@ -9,7 +9,7 @@ const HEALTH_CHECK = "SELECT 1";
 
 const env = {
   NODE_ENV: "test",
-  DB_URL: "postgres://root:123@postgres/user"
+  DB_URL: "postgres://root:123@postgres/taps"
 };
 
 interface TestContext {

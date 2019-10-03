@@ -16,8 +16,8 @@
     "start": "docker-compose up -d --build --remove-orphans",
     "down": "docker-compose down",
     "test": "npm run test:start && npm run test:run",
-    "test:run": "docker-compose -f docker-compose.test.yml -p user-api-test exec api npm run jest",
-    "test:start": "docker-compose -f docker-compose.test.yml -p user-api-test up -d --build --remove-orphans"
+    "test:run": "docker-compose -f docker-compose.test.yml -p taps-test exec api npm run jest",
+    "test:start": "docker-compose -f docker-compose.test.yml -p taps-test up -d --build --remove-orphans"
   },
   "repository": {
     "type": "git",
