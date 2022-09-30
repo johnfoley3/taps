@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/johnfoley3/taps#readme",
   "dependencies": {
-    "@hapi/boom": "7.4.2",
+    "@hapi/boom": "7.4.11",
     "@hapi/hapi": "^18.4.0",
     "bluebird": "^3.5.5",
     "hapi-pino": "^6.1.0",
